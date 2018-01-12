@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createBlogPost } from '../actions'
@@ -24,7 +23,7 @@ function BlogPostCreate(props) {
         }}>
         <div className='col-md-12'>
           <div>
-            <Link to='/'>Front page</Link>
+            <span>Front page</span>
           </div>
         </div>
       </div>
@@ -59,4 +58,4 @@ function mapDispatchToProps(dispatch){
  return bindActionCreators({createBlogPost}, dispatch)
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(BlogPostCreate))
+export default connect(null, mapDispatchToProps)(BlogPostCreate)

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
 import _ from 'lodash'
 import BlogPostAbbreviated from '../containers/BlogPostAbbreviated'
 import { fetchBlogPosts } from '../actions'
@@ -18,7 +17,7 @@ class BlogPostList extends Component{
           <div className='col-md-12'>
             <div className='float-right'>
               <div className='btn btn-secondary'>
-                <Link to='/blogpost/new'>Create New</Link>
+                <span>Create New</span>
               </div>
             </div>
           </div>
