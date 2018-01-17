@@ -16,6 +16,46 @@ export function fetchBlogPosts(){
   }
 }
 
+export function fetchBlogPost(id){
+  return async (dispatch) => {
+    const res = await request(`/api/blogposts/${id}`)
+    const json = await res.json()
+
+    dispatch({
+      type: FETCH_BLOG_POST_SUCCESS,
+      payload: json.BlogPost
+    })
+  }
+}
+
+export function createBlogPost(blogPost, cb){
+  return async (dispatch) => {
+    const res = await request(`/api/blogposts`, 'POST', blogPost)
+    const json = await res.json()
+
+    dispatch({
+      type: CREATE_BLOG_POST_SUCESS,
+      payload: json.BlogPost
+    })
+
+    cb()
+  }
+}
+
+export function deleteBlogPost(blogPostId, cb){
+  return async (dispatch) => {
+    const res = await request(`/api/blogposts/${blogPostId}`,'DELETE')
+    const json = await res.json()
+
+    dispatch({
+      type: DELETE_BLOG_POST_SUCCESS,
+      payload: json.BlogPost
+    })
+
+    cb()
+  }
+}
+
 // ----------------------------------------------------------------------
 
 async function request(path, method = 'GET', body = null) {
