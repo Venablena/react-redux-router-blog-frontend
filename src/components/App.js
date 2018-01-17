@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BlogPostList from '../containers/BlogPostList'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 
 class App extends Component {

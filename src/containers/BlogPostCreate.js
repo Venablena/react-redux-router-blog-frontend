@@ -8,12 +8,6 @@ function BlogPostCreate(props) {
   function gatherPost(event){
     event.preventDefault()
 
-    props.createBlogPost({
-      title: event.target.blogPostTitle.value,
-      content: event.target.blogPostContent.value
-    }, ()=>{
-      props.history.push('/')
-    })
   }
 
   return (

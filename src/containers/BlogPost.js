@@ -15,9 +15,7 @@ class BlogPost extends Component{
   }
 
   deleteBlogPost(blogPostId){
-    this.props.deleteBlogPost(blogPostId, ()=>{
-      this.props.history.push('/')
-    })
+  
   }
 
   render(){

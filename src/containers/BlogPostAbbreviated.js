@@ -7,7 +7,7 @@ function truncateAndSeparateContent(content){
 
 
 function BlogPostAbbrebiated(props){
-  const { id, title, created_at, content } = props
+  const { title, created_at, content } = props
   return (
     <div>
       <div className='list-group-item flex-column align-items-start'>
